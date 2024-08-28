@@ -43,7 +43,7 @@ const Page = () => {
           description: "",
           category: "Startup",
           author: "Prabodha",
-          authorImg: "/authorImg.png"
+          authorImg: "/profile_icon.png" 
         })
       } else {
         toast.error("Error");
