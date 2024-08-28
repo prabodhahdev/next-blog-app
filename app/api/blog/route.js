@@ -12,8 +12,8 @@ const LoadDB = async () => {
 LoadDB();
 
 export async function GET(req) {
-    console.log("Blog GET Hit")
-    return NextResponse.json({ msg: "API Working" })
+    const blogs=await BlogModel.find({});
+    return NextResponse.json({ blogs })
 }
 
 export async function POST(req) {
