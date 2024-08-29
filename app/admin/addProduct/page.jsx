@@ -13,7 +13,7 @@ const Page = () => {
     description: "",
     category: "Startup",
     author: "Prabodha",
-    authorImg: "/authorImg.png"
+    authorImg: "/author_img.jpg"
   });
 
   const onChangeHandler = (event) => {
@@ -43,7 +43,7 @@ const Page = () => {
           description: "",
           category: "Startup",
           author: "Prabodha",
-          authorImg: "/profile_icon.png" 
+          authorImg: "/author_img.jpg" 
         })
       } else {
         toast.error("Error");
