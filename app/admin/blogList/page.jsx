@@ -1,7 +1,21 @@
+'use client'
 import BlogTableItem from '@/Components/AdminCompo/BlogTableItem'
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 
 const page = () => {
+
+  const [blogs,setBlogs]=useState([]);
+  const fetchBlogs=async ()=>{
+    const response =await axios.get('/api/blog');
+    setBlogs(response.data.blogs);
+
+  }
+
+  useEffect(()=>{
+    fetchBlogs()
+  },[])
+
   return (
     <div className='flex-1 pt-5 px-5 sm:pt-12 sm:pl-16'>
       <h1>All Blogs</h1>
@@ -23,8 +37,10 @@ const page = () => {
               </th>
             </tr>
           </thead>
-          <tbody>
-            <BlogTableItem />
+          <tbody >
+            {blogs.map((item,index)=>{
+                return <BlogTableItem key={index} mongoId={item._id} title={item.title} author={item.author} authorImg={item.authorImg} date={item.date}/>
+            })}
           </tbody>
         </table>
       </div>
