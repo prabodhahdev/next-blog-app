@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SubstableItem = ({email,mongoId,date}) => {
+const SubstableItem = ({email,mongoId,date,deleteEmail}) => {
 
     const emaildate= new Date(date);
 
@@ -14,7 +14,7 @@ const SubstableItem = ({email,mongoId,date}) => {
         {emaildate.toDateString()}
 
       </td>
-      <td  className='px-6 py-4  cursor-pointer'>
+      <td  className='px-6 py-4  cursor-pointer' onClick={()=>deleteEmail(mongoId)}>
 
         x
       </td>
