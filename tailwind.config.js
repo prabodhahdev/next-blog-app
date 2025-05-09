@@ -16,3 +16,6 @@ module.exports = {
   },
   plugins: [],
 };
+
+
+/* add all tailwind config */
